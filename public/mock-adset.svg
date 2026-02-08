@@ -1,0 +1,25 @@
+<svg width="600" height="420" viewBox="0 0 600 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="600" y2="420" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#E5FFF5"/>
+      <stop offset="0.6" stop-color="#F6FFFB"/>
+      <stop offset="1" stop-color="#FFFFFF"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(120 120) rotate(35) scale(220 160)">
+      <stop stop-color="#BFEFE0"/>
+      <stop offset="1" stop-color="#BFEFE0" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D2F2E5"/>
+      <stop offset="1" stop-color="#F0FFF9"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="420" rx="36" fill="url(#bg)"/>
+  <rect x="0" y="0" width="600" height="420" rx="36" fill="url(#glow)"/>
+  <rect x="80" y="70" width="200" height="140" rx="28" fill="url(#panel)"/>
+  <rect x="320" y="70" width="200" height="140" rx="28" fill="#FFFFFF"/>
+  <rect x="320" y="230" width="200" height="120" rx="24" fill="url(#panel)"/>
+  <rect x="80" y="230" width="200" height="120" rx="24" fill="#FFFFFF"/>
+  <circle cx="180" cy="140" r="36" fill="#C7EFE1"/>
+  <circle cx="420" cy="300" r="30" fill="#C7EFE1"/>
+</svg>
