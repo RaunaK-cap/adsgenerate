@@ -16,7 +16,7 @@ datasource db {
 
 model User {
   id            String    @id
-  name          String
+  name          String    @unique
   email         String
   emailVerified Boolean   @default(false)
   image         String?
@@ -24,6 +24,8 @@ model User {
   updatedAt     DateTime  @updatedAt
   sessions      Session[]
   accounts      Account[]
+  input_images   Input_images[] @relation("inputimagesbyuserId")
+  imput_images_by_username  Input_images[]  @relation("inputimagesbyusername")
 
   @@unique([email])
   @@map("user")
@@ -75,4 +77,34 @@ model Verification {
 
   @@index([identifier])
   @@map("verification")
+}
+
+enum Generation_types{
+  ADS
+  THUMBNAIL
+}
+
+model Input_images {
+  id  String @id
+  user_ID  String
+  user  User  @relation("inputimagesbyuserId" , fields: [user_ID] , references: [id])
+  user_name  String
+  username User @relation("inputimagesbyusername", fields: [user_name] ,references: [name])
+  prompt String
+  image_link String
+  types Generation_types @default(THUMBNAIL)
+  createdAt   DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  output_images  output_images[]  @relation("outputimageidbyinputimageid")
+}
+
+model output_images {
+  id String  @id
+  Input_image_id  String
+  Input_images  Input_images  @relation( "outputimageidbyinputimageid" ,fields: [Input_image_id] , references: [id])
+  Generated_images   String
+  prompt  String
+  type  String
+  
 }
