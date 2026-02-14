@@ -97,6 +97,7 @@ model Input_images {
   updatedAt  DateTime @updatedAt
 
   output_images  output_images[]  @relation("outputimageidbyinputimageid")
+ 
 }
 
 model output_images {
@@ -105,6 +106,9 @@ model output_images {
   Input_images  Input_images  @relation( "outputimageidbyinputimageid" ,fields: [Input_image_id] , references: [id])
   Generated_images   String
   prompt  String
-  type  String
+  types Generation_types
+  createdAt   DateTime  @default(now()) 
+  updatedAt   DateTime  @updatedAt
+ 
   
 }
