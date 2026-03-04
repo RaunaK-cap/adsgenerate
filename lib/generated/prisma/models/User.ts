@@ -200,6 +200,8 @@ export type UserWhereInput = {
   updatedAt?: Prisma.DateTimeFilter<"User"> | Date | string
   sessions?: Prisma.SessionListRelationFilter
   accounts?: Prisma.AccountListRelationFilter
+  input_images?: Prisma.Input_imagesListRelationFilter
+  imput_images_by_username?: Prisma.Input_imagesListRelationFilter
 }
 
 export type UserOrderByWithRelationInput = {
@@ -212,22 +214,26 @@ export type UserOrderByWithRelationInput = {
   updatedAt?: Prisma.SortOrder
   sessions?: Prisma.SessionOrderByRelationAggregateInput
   accounts?: Prisma.AccountOrderByRelationAggregateInput
+  input_images?: Prisma.Input_imagesOrderByRelationAggregateInput
+  imput_images_by_username?: Prisma.Input_imagesOrderByRelationAggregateInput
 }
 
 export type UserWhereUniqueInput = Prisma.AtLeast<{
   id?: string
+  name?: string
   email?: string
   AND?: Prisma.UserWhereInput | Prisma.UserWhereInput[]
   OR?: Prisma.UserWhereInput[]
   NOT?: Prisma.UserWhereInput | Prisma.UserWhereInput[]
-  name?: Prisma.StringFilter<"User"> | string
   emailVerified?: Prisma.BoolFilter<"User"> | boolean
   image?: Prisma.StringNullableFilter<"User"> | string | null
   createdAt?: Prisma.DateTimeFilter<"User"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"User"> | Date | string
   sessions?: Prisma.SessionListRelationFilter
   accounts?: Prisma.AccountListRelationFilter
-}, "id" | "email">
+  input_images?: Prisma.Input_imagesListRelationFilter
+  imput_images_by_username?: Prisma.Input_imagesListRelationFilter
+}, "id" | "name" | "email">
 
 export type UserOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
@@ -265,6 +271,8 @@ export type UserCreateInput = {
   updatedAt?: Date | string
   sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
   accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
+  input_images?: Prisma.Input_imagesCreateNestedManyWithoutUserInput
+  imput_images_by_username?: Prisma.Input_imagesCreateNestedManyWithoutUsernameInput
 }
 
 export type UserUncheckedCreateInput = {
@@ -277,6 +285,8 @@ export type UserUncheckedCreateInput = {
   updatedAt?: Date | string
   sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
   accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
+  input_images?: Prisma.Input_imagesUncheckedCreateNestedManyWithoutUserInput
+  imput_images_by_username?: Prisma.Input_imagesUncheckedCreateNestedManyWithoutUsernameInput
 }
 
 export type UserUpdateInput = {
@@ -289,6 +299,8 @@ export type UserUpdateInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
+  input_images?: Prisma.Input_imagesUpdateManyWithoutUserNestedInput
+  imput_images_by_username?: Prisma.Input_imagesUpdateManyWithoutUsernameNestedInput
 }
 
 export type UserUncheckedUpdateInput = {
@@ -301,6 +313,8 @@ export type UserUncheckedUpdateInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
+  input_images?: Prisma.Input_imagesUncheckedUpdateManyWithoutUserNestedInput
+  imput_images_by_username?: Prisma.Input_imagesUncheckedUpdateManyWithoutUsernameNestedInput
 }
 
 export type UserCreateManyInput = {
@@ -412,6 +426,34 @@ export type UserUpdateOneRequiredWithoutAccountsNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutAccountsInput, Prisma.UserUpdateWithoutAccountsInput>, Prisma.UserUncheckedUpdateWithoutAccountsInput>
 }
 
+export type UserCreateNestedOneWithoutInput_imagesInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutInput_imagesInput, Prisma.UserUncheckedCreateWithoutInput_imagesInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutInput_imagesInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserCreateNestedOneWithoutImput_images_by_usernameInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutImput_images_by_usernameInput, Prisma.UserUncheckedCreateWithoutImput_images_by_usernameInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutImput_images_by_usernameInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutInput_imagesNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutInput_imagesInput, Prisma.UserUncheckedCreateWithoutInput_imagesInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutInput_imagesInput
+  upsert?: Prisma.UserUpsertWithoutInput_imagesInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutInput_imagesInput, Prisma.UserUpdateWithoutInput_imagesInput>, Prisma.UserUncheckedUpdateWithoutInput_imagesInput>
+}
+
+export type UserUpdateOneRequiredWithoutImput_images_by_usernameNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutImput_images_by_usernameInput, Prisma.UserUncheckedCreateWithoutImput_images_by_usernameInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutImput_images_by_usernameInput
+  upsert?: Prisma.UserUpsertWithoutImput_images_by_usernameInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutImput_images_by_usernameInput, Prisma.UserUpdateWithoutImput_images_by_usernameInput>, Prisma.UserUncheckedUpdateWithoutImput_images_by_usernameInput>
+}
+
 export type UserCreateWithoutSessionsInput = {
   id: string
   name: string
@@ -421,6 +463,8 @@ export type UserCreateWithoutSessionsInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
+  input_images?: Prisma.Input_imagesCreateNestedManyWithoutUserInput
+  imput_images_by_username?: Prisma.Input_imagesCreateNestedManyWithoutUsernameInput
 }
 
 export type UserUncheckedCreateWithoutSessionsInput = {
@@ -432,6 +476,8 @@ export type UserUncheckedCreateWithoutSessionsInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
+  input_images?: Prisma.Input_imagesUncheckedCreateNestedManyWithoutUserInput
+  imput_images_by_username?: Prisma.Input_imagesUncheckedCreateNestedManyWithoutUsernameInput
 }
 
 export type UserCreateOrConnectWithoutSessionsInput = {
@@ -459,6 +505,8 @@ export type UserUpdateWithoutSessionsInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
+  input_images?: Prisma.Input_imagesUpdateManyWithoutUserNestedInput
+  imput_images_by_username?: Prisma.Input_imagesUpdateManyWithoutUsernameNestedInput
 }
 
 export type UserUncheckedUpdateWithoutSessionsInput = {
@@ -470,6 +518,8 @@ export type UserUncheckedUpdateWithoutSessionsInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
+  input_images?: Prisma.Input_imagesUncheckedUpdateManyWithoutUserNestedInput
+  imput_images_by_username?: Prisma.Input_imagesUncheckedUpdateManyWithoutUsernameNestedInput
 }
 
 export type UserCreateWithoutAccountsInput = {
@@ -481,6 +531,8 @@ export type UserCreateWithoutAccountsInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  input_images?: Prisma.Input_imagesCreateNestedManyWithoutUserInput
+  imput_images_by_username?: Prisma.Input_imagesCreateNestedManyWithoutUsernameInput
 }
 
 export type UserUncheckedCreateWithoutAccountsInput = {
@@ -492,6 +544,8 @@ export type UserUncheckedCreateWithoutAccountsInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  input_images?: Prisma.Input_imagesUncheckedCreateNestedManyWithoutUserInput
+  imput_images_by_username?: Prisma.Input_imagesUncheckedCreateNestedManyWithoutUsernameInput
 }
 
 export type UserCreateOrConnectWithoutAccountsInput = {
@@ -519,6 +573,8 @@ export type UserUpdateWithoutAccountsInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  input_images?: Prisma.Input_imagesUpdateManyWithoutUserNestedInput
+  imput_images_by_username?: Prisma.Input_imagesUpdateManyWithoutUsernameNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAccountsInput = {
@@ -530,6 +586,144 @@ export type UserUncheckedUpdateWithoutAccountsInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  input_images?: Prisma.Input_imagesUncheckedUpdateManyWithoutUserNestedInput
+  imput_images_by_username?: Prisma.Input_imagesUncheckedUpdateManyWithoutUsernameNestedInput
+}
+
+export type UserCreateWithoutInput_imagesInput = {
+  id: string
+  name: string
+  email: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
+  imput_images_by_username?: Prisma.Input_imagesCreateNestedManyWithoutUsernameInput
+}
+
+export type UserUncheckedCreateWithoutInput_imagesInput = {
+  id: string
+  name: string
+  email: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
+  imput_images_by_username?: Prisma.Input_imagesUncheckedCreateNestedManyWithoutUsernameInput
+}
+
+export type UserCreateOrConnectWithoutInput_imagesInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutInput_imagesInput, Prisma.UserUncheckedCreateWithoutInput_imagesInput>
+}
+
+export type UserCreateWithoutImput_images_by_usernameInput = {
+  id: string
+  name: string
+  email: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
+  input_images?: Prisma.Input_imagesCreateNestedManyWithoutUserInput
+}
+
+export type UserUncheckedCreateWithoutImput_images_by_usernameInput = {
+  id: string
+  name: string
+  email: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
+  input_images?: Prisma.Input_imagesUncheckedCreateNestedManyWithoutUserInput
+}
+
+export type UserCreateOrConnectWithoutImput_images_by_usernameInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutImput_images_by_usernameInput, Prisma.UserUncheckedCreateWithoutImput_images_by_usernameInput>
+}
+
+export type UserUpsertWithoutInput_imagesInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutInput_imagesInput, Prisma.UserUncheckedUpdateWithoutInput_imagesInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutInput_imagesInput, Prisma.UserUncheckedCreateWithoutInput_imagesInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutInput_imagesInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutInput_imagesInput, Prisma.UserUncheckedUpdateWithoutInput_imagesInput>
+}
+
+export type UserUpdateWithoutInput_imagesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
+  imput_images_by_username?: Prisma.Input_imagesUpdateManyWithoutUsernameNestedInput
+}
+
+export type UserUncheckedUpdateWithoutInput_imagesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
+  imput_images_by_username?: Prisma.Input_imagesUncheckedUpdateManyWithoutUsernameNestedInput
+}
+
+export type UserUpsertWithoutImput_images_by_usernameInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutImput_images_by_usernameInput, Prisma.UserUncheckedUpdateWithoutImput_images_by_usernameInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutImput_images_by_usernameInput, Prisma.UserUncheckedCreateWithoutImput_images_by_usernameInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutImput_images_by_usernameInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutImput_images_by_usernameInput, Prisma.UserUncheckedUpdateWithoutImput_images_by_usernameInput>
+}
+
+export type UserUpdateWithoutImput_images_by_usernameInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
+  input_images?: Prisma.Input_imagesUpdateManyWithoutUserNestedInput
+}
+
+export type UserUncheckedUpdateWithoutImput_images_by_usernameInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
+  input_images?: Prisma.Input_imagesUncheckedUpdateManyWithoutUserNestedInput
 }
 
 
@@ -540,11 +734,15 @@ export type UserUncheckedUpdateWithoutAccountsInput = {
 export type UserCountOutputType = {
   sessions: number
   accounts: number
+  input_images: number
+  imput_images_by_username: number
 }
 
 export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   sessions?: boolean | UserCountOutputTypeCountSessionsArgs
   accounts?: boolean | UserCountOutputTypeCountAccountsArgs
+  input_images?: boolean | UserCountOutputTypeCountInput_imagesArgs
+  imput_images_by_username?: boolean | UserCountOutputTypeCountImput_images_by_usernameArgs
 }
 
 /**
@@ -571,6 +769,20 @@ export type UserCountOutputTypeCountAccountsArgs<ExtArgs extends runtime.Types.E
   where?: Prisma.AccountWhereInput
 }
 
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountInput_imagesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.Input_imagesWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountImput_images_by_usernameArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.Input_imagesWhereInput
+}
+
 
 export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -582,6 +794,8 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   updatedAt?: boolean
   sessions?: boolean | Prisma.User$sessionsArgs<ExtArgs>
   accounts?: boolean | Prisma.User$accountsArgs<ExtArgs>
+  input_images?: boolean | Prisma.User$input_imagesArgs<ExtArgs>
+  imput_images_by_username?: boolean | Prisma.User$imput_images_by_usernameArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["user"]>
 
@@ -619,6 +833,8 @@ export type UserOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = run
 export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   sessions?: boolean | Prisma.User$sessionsArgs<ExtArgs>
   accounts?: boolean | Prisma.User$accountsArgs<ExtArgs>
+  input_images?: boolean | Prisma.User$input_imagesArgs<ExtArgs>
+  imput_images_by_username?: boolean | Prisma.User$imput_images_by_usernameArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type UserIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -629,6 +845,8 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
   objects: {
     sessions: Prisma.$SessionPayload<ExtArgs>[]
     accounts: Prisma.$AccountPayload<ExtArgs>[]
+    input_images: Prisma.$Input_imagesPayload<ExtArgs>[]
+    imput_images_by_username: Prisma.$Input_imagesPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1034,6 +1252,8 @@ export interface Prisma__UserClient<T, Null = never, ExtArgs extends runtime.Typ
   readonly [Symbol.toStringTag]: "PrismaPromise"
   sessions<T extends Prisma.User$sessionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$sessionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SessionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   accounts<T extends Prisma.User$accountsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$accountsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AccountPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  input_images<T extends Prisma.User$input_imagesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$input_imagesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$Input_imagesPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  imput_images_by_username<T extends Prisma.User$imput_images_by_usernameArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$imput_images_by_usernameArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$Input_imagesPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1503,6 +1723,54 @@ export type User$accountsArgs<ExtArgs extends runtime.Types.Extensions.InternalA
   take?: number
   skip?: number
   distinct?: Prisma.AccountScalarFieldEnum | Prisma.AccountScalarFieldEnum[]
+}
+
+/**
+ * User.input_images
+ */
+export type User$input_imagesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Input_images
+   */
+  select?: Prisma.Input_imagesSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Input_images
+   */
+  omit?: Prisma.Input_imagesOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.Input_imagesInclude<ExtArgs> | null
+  where?: Prisma.Input_imagesWhereInput
+  orderBy?: Prisma.Input_imagesOrderByWithRelationInput | Prisma.Input_imagesOrderByWithRelationInput[]
+  cursor?: Prisma.Input_imagesWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.Input_imagesScalarFieldEnum | Prisma.Input_imagesScalarFieldEnum[]
+}
+
+/**
+ * User.imput_images_by_username
+ */
+export type User$imput_images_by_usernameArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Input_images
+   */
+  select?: Prisma.Input_imagesSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Input_images
+   */
+  omit?: Prisma.Input_imagesOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.Input_imagesInclude<ExtArgs> | null
+  where?: Prisma.Input_imagesWhereInput
+  orderBy?: Prisma.Input_imagesOrderByWithRelationInput | Prisma.Input_imagesOrderByWithRelationInput[]
+  cursor?: Prisma.Input_imagesWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.Input_imagesScalarFieldEnum | Prisma.Input_imagesScalarFieldEnum[]
 }
 
 /**

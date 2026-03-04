@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { Camera, Sparkles } from "lucide-react";
+import  { FileUpload , GridPattern }  from "@/components/file-upload";
 
 type OutputCard = { id: string; label: string; src?: string };
 
@@ -109,7 +110,7 @@ export default function DashboardPage() {
                 Upload
               </div>
               <label className="mt-3 flex h-25 w-full cursor-pointer items-center justify-center rounded-xl border border-dashed border-ink/20 bg-sand/60 text-xs font-semibold uppercase tracking-[0.2em] text-ink/50 transition hover:border-ink/40 hover:bg-sand">
-                <div className="flex flex-col items-center gap-2 text-center">
+                {/* <div className="flex flex-col items-center gap-2 text-center">
                   <Camera className="h-4 w-5" />
                   Drop or click to upload
                 </div>
@@ -122,7 +123,9 @@ export default function DashboardPage() {
                     setUploadPreview(URL.createObjectURL(file));
                   }}
                   className="absolute h-0 w-0 opacity-0"
-                />
+                /> */}
+
+                <FileUpload/>
               </label>
               <div className="mt-3 flex items-center justify-between text-xs text-ink/60">
                 <span>JPG, PNG, or WebP up to 10MB</span>

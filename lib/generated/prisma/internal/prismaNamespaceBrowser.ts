@@ -54,7 +54,9 @@ export const ModelName = {
   User: 'User',
   Session: 'Session',
   Account: 'Account',
-  Verification: 'Verification'
+  Verification: 'Verification',
+  Input_images: 'Input_images',
+  output_images: 'output_images'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -129,6 +131,33 @@ export const VerificationScalarFieldEnum = {
 } as const
 
 export type VerificationScalarFieldEnum = (typeof VerificationScalarFieldEnum)[keyof typeof VerificationScalarFieldEnum]
+
+
+export const Input_imagesScalarFieldEnum = {
+  id: 'id',
+  user_ID: 'user_ID',
+  user_name: 'user_name',
+  prompt: 'prompt',
+  image_link: 'image_link',
+  types: 'types',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type Input_imagesScalarFieldEnum = (typeof Input_imagesScalarFieldEnum)[keyof typeof Input_imagesScalarFieldEnum]
+
+
+export const Output_imagesScalarFieldEnum = {
+  id: 'id',
+  Input_image_id: 'Input_image_id',
+  Generated_images: 'Generated_images',
+  prompt: 'prompt',
+  types: 'types',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type Output_imagesScalarFieldEnum = (typeof Output_imagesScalarFieldEnum)[keyof typeof Output_imagesScalarFieldEnum]
 
 
 export const SortOrder = {

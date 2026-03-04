@@ -387,7 +387,9 @@ export const ModelName = {
   User: 'User',
   Session: 'Session',
   Account: 'Account',
-  Verification: 'Verification'
+  Verification: 'Verification',
+  Input_images: 'Input_images',
+  output_images: 'output_images'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -403,7 +405,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user" | "session" | "account" | "verification"
+    modelProps: "user" | "session" | "account" | "verification" | "input_images" | "output_images"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -703,6 +705,154 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    Input_images: {
+      payload: Prisma.$Input_imagesPayload<ExtArgs>
+      fields: Prisma.Input_imagesFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.Input_imagesFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$Input_imagesPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.Input_imagesFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$Input_imagesPayload>
+        }
+        findFirst: {
+          args: Prisma.Input_imagesFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$Input_imagesPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.Input_imagesFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$Input_imagesPayload>
+        }
+        findMany: {
+          args: Prisma.Input_imagesFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$Input_imagesPayload>[]
+        }
+        create: {
+          args: Prisma.Input_imagesCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$Input_imagesPayload>
+        }
+        createMany: {
+          args: Prisma.Input_imagesCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.Input_imagesCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$Input_imagesPayload>[]
+        }
+        delete: {
+          args: Prisma.Input_imagesDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$Input_imagesPayload>
+        }
+        update: {
+          args: Prisma.Input_imagesUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$Input_imagesPayload>
+        }
+        deleteMany: {
+          args: Prisma.Input_imagesDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.Input_imagesUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.Input_imagesUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$Input_imagesPayload>[]
+        }
+        upsert: {
+          args: Prisma.Input_imagesUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$Input_imagesPayload>
+        }
+        aggregate: {
+          args: Prisma.Input_imagesAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateInput_images>
+        }
+        groupBy: {
+          args: Prisma.Input_imagesGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.Input_imagesGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.Input_imagesCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.Input_imagesCountAggregateOutputType> | number
+        }
+      }
+    }
+    output_images: {
+      payload: Prisma.$output_imagesPayload<ExtArgs>
+      fields: Prisma.output_imagesFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.output_imagesFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$output_imagesPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.output_imagesFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$output_imagesPayload>
+        }
+        findFirst: {
+          args: Prisma.output_imagesFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$output_imagesPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.output_imagesFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$output_imagesPayload>
+        }
+        findMany: {
+          args: Prisma.output_imagesFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$output_imagesPayload>[]
+        }
+        create: {
+          args: Prisma.output_imagesCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$output_imagesPayload>
+        }
+        createMany: {
+          args: Prisma.output_imagesCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.output_imagesCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$output_imagesPayload>[]
+        }
+        delete: {
+          args: Prisma.output_imagesDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$output_imagesPayload>
+        }
+        update: {
+          args: Prisma.output_imagesUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$output_imagesPayload>
+        }
+        deleteMany: {
+          args: Prisma.output_imagesDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.output_imagesUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.output_imagesUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$output_imagesPayload>[]
+        }
+        upsert: {
+          args: Prisma.output_imagesUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$output_imagesPayload>
+        }
+        aggregate: {
+          args: Prisma.Output_imagesAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateOutput_images>
+        }
+        groupBy: {
+          args: Prisma.output_imagesGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.Output_imagesGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.output_imagesCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.Output_imagesCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -800,6 +950,33 @@ export const VerificationScalarFieldEnum = {
 export type VerificationScalarFieldEnum = (typeof VerificationScalarFieldEnum)[keyof typeof VerificationScalarFieldEnum]
 
 
+export const Input_imagesScalarFieldEnum = {
+  id: 'id',
+  user_ID: 'user_ID',
+  user_name: 'user_name',
+  prompt: 'prompt',
+  image_link: 'image_link',
+  types: 'types',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type Input_imagesScalarFieldEnum = (typeof Input_imagesScalarFieldEnum)[keyof typeof Input_imagesScalarFieldEnum]
+
+
+export const Output_imagesScalarFieldEnum = {
+  id: 'id',
+  Input_image_id: 'Input_image_id',
+  Generated_images: 'Generated_images',
+  prompt: 'prompt',
+  types: 'types',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type Output_imagesScalarFieldEnum = (typeof Output_imagesScalarFieldEnum)[keyof typeof Output_imagesScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -862,6 +1039,20 @@ export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel
  * Reference to a field of type 'DateTime[]'
  */
 export type ListDateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime[]'>
+    
+
+
+/**
+ * Reference to a field of type 'Generation_types'
+ */
+export type EnumGeneration_typesFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Generation_types'>
+    
+
+
+/**
+ * Reference to a field of type 'Generation_types[]'
+ */
+export type ListEnumGeneration_typesFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Generation_types[]'>
     
 
 
@@ -977,6 +1168,8 @@ export type GlobalOmitConfig = {
   session?: Prisma.SessionOmit
   account?: Prisma.AccountOmit
   verification?: Prisma.VerificationOmit
+  input_images?: Prisma.Input_imagesOmit
+  output_images?: Prisma.output_imagesOmit
 }
 
 /* Types for Logging */

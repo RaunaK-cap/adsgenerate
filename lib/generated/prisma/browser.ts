@@ -37,3 +37,13 @@ export type Account = Prisma.AccountModel
  * 
  */
 export type Verification = Prisma.VerificationModel
+/**
+ * Model Input_images
+ * 
+ */
+export type Input_images = Prisma.Input_imagesModel
+/**
+ * Model output_images
+ * 
+ */
+export type output_images = Prisma.output_imagesModel

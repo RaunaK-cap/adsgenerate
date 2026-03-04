@@ -9,7 +9,9 @@
 * 🟢 You can import this file directly.
 */
 
+export const Generation_types = {
+  ADS: 'ADS',
+  THUMBNAIL: 'THUMBNAIL'
+} as const
 
-
-// This file is empty because there are no enums in the schema.
-export {}
+export type Generation_types = (typeof Generation_types)[keyof typeof Generation_types]

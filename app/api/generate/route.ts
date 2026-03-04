@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { auth } from "../../../lib/auth"; // path to your Better Auth server instance
+import { auth, prisma } from "../../../lib/auth"; // path to your Better Auth server instance
 import { headers } from "next/headers";
 import { z} from "zod"
 
@@ -33,7 +33,17 @@ export async function POST(req:NextRequest){
             })
         }
 
-        
+        try {
+            const response = prisma.input_images.create({
+                data:{
+                     
+                }
+            })
+        } catch (error) {
+            
+        }
+
+
 
 
 }

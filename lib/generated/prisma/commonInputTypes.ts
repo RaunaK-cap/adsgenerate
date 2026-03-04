@@ -148,6 +148,23 @@ export type DateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
   _max?: Prisma.NestedDateTimeNullableFilter<$PrismaModel>
 }
 
+export type EnumGeneration_typesFilter<$PrismaModel = never> = {
+  equals?: $Enums.Generation_types | Prisma.EnumGeneration_typesFieldRefInput<$PrismaModel>
+  in?: $Enums.Generation_types[] | Prisma.ListEnumGeneration_typesFieldRefInput<$PrismaModel>
+  notIn?: $Enums.Generation_types[] | Prisma.ListEnumGeneration_typesFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumGeneration_typesFilter<$PrismaModel> | $Enums.Generation_types
+}
+
+export type EnumGeneration_typesWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.Generation_types | Prisma.EnumGeneration_typesFieldRefInput<$PrismaModel>
+  in?: $Enums.Generation_types[] | Prisma.ListEnumGeneration_typesFieldRefInput<$PrismaModel>
+  notIn?: $Enums.Generation_types[] | Prisma.ListEnumGeneration_typesFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumGeneration_typesWithAggregatesFilter<$PrismaModel> | $Enums.Generation_types
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumGeneration_typesFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumGeneration_typesFilter<$PrismaModel>
+}
+
 export type NestedStringFilter<$PrismaModel = never> = {
   equals?: string | Prisma.StringFieldRefInput<$PrismaModel>
   in?: string[] | Prisma.ListStringFieldRefInput<$PrismaModel>
@@ -293,6 +310,23 @@ export type NestedDateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
   _count?: Prisma.NestedIntNullableFilter<$PrismaModel>
   _min?: Prisma.NestedDateTimeNullableFilter<$PrismaModel>
   _max?: Prisma.NestedDateTimeNullableFilter<$PrismaModel>
+}
+
+export type NestedEnumGeneration_typesFilter<$PrismaModel = never> = {
+  equals?: $Enums.Generation_types | Prisma.EnumGeneration_typesFieldRefInput<$PrismaModel>
+  in?: $Enums.Generation_types[] | Prisma.ListEnumGeneration_typesFieldRefInput<$PrismaModel>
+  notIn?: $Enums.Generation_types[] | Prisma.ListEnumGeneration_typesFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumGeneration_typesFilter<$PrismaModel> | $Enums.Generation_types
+}
+
+export type NestedEnumGeneration_typesWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.Generation_types | Prisma.EnumGeneration_typesFieldRefInput<$PrismaModel>
+  in?: $Enums.Generation_types[] | Prisma.ListEnumGeneration_typesFieldRefInput<$PrismaModel>
+  notIn?: $Enums.Generation_types[] | Prisma.ListEnumGeneration_typesFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumGeneration_typesWithAggregatesFilter<$PrismaModel> | $Enums.Generation_types
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumGeneration_typesFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumGeneration_typesFilter<$PrismaModel>
 }
 
 
