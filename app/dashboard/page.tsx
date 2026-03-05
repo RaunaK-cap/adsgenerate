@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { Camera, Sparkles } from "lucide-react";
-import  { FileUpload , GridPattern }  from "@/components/file-upload";
+import { Sparkles } from "lucide-react";
+import { FileUpload } from "@/components/file-upload";
 
 type OutputCard = { id: string; label: string; src?: string };
 
@@ -28,6 +28,8 @@ export default function DashboardPage() {
     "sunlit marble, warm beige, luxe."
   );
   const [generated, setGenerated] = useState<OutputCard[]>([]);
+
+  console.log(uploadPreview , promptDraft)
 
   useEffect(() => {
     if (!uploadPreview) return;
@@ -95,7 +97,7 @@ export default function DashboardPage() {
                   <img
                     src={uploadPreview}
                     alt="Uploaded preview"
-                    className= " h-62 flex items-center justify-center object-center rounded-lg mt-5 ml-25 opacity-90"
+                    className="h-full w-full object-contain p-3 opacity-95"
                   />
                 ) : (
                   <div className="flex h-full items-center justify-center text-xs font-semibold uppercase tracking-[0.2em] text-ink/40">
@@ -109,24 +111,15 @@ export default function DashboardPage() {
               <div className="text-xs font-semibold uppercase tracking-[0.2em] text-ink/60">
                 Upload
               </div>
-              <label className="mt-3 flex h-25 w-full cursor-pointer items-center justify-center rounded-xl border border-dashed border-ink/20 bg-sand/60 text-xs font-semibold uppercase tracking-[0.2em] text-ink/50 transition hover:border-ink/40 hover:bg-sand">
-                {/* <div className="flex flex-col items-center gap-2 text-center">
-                  <Camera className="h-4 w-5" />
-                  Drop or click to upload
-                </div>
-                <input
-                  type="file"
-                  accept="image/*"
-                  onChange={(event) => {
-                    const file = event.target.files?.[0];
+              <div className="mt-3 overflow-hidden rounded-xl border border-dashed border-ink/20 bg-gradient-to-br from-sand/80 to-cream/80 transition hover:border-ink/40">
+                <FileUpload
+                  onChange={(files) => {
+                    const file = files?.[0];
                     if (!file) return;
                     setUploadPreview(URL.createObjectURL(file));
                   }}
-                  className="absolute h-0 w-0 opacity-0"
-                /> */}
-
-                <FileUpload/>
-              </label>
+                />
+              </div>
               <div className="mt-3 flex items-center justify-between text-xs text-ink/60">
                 <span>JPG, PNG, or WebP up to 10MB</span>
                 <span className="rounded-full bg-ink/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-ink/70">
